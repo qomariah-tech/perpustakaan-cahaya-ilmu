@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Cahaya Ilmu - SDN Pulau Nyiur 2</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0056b3',
+                            darkblue: '#002f6c',
+                            lightblue: '#0080ff',
+                            gold: '#f39c12',
+                            bg: '#f4f8fb'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Name -->
+                <div class="flex items-center space-x-3">
+                    <img src="https://lh3.googleusercontent.com/d/1xcijiLX7ZYA29mL5OWx0Mk2B0KVYhY7i" alt="Logo Perpustakaan Cahaya Ilmu" class="h-12 w-12 object-contain rounded-full shadow-sm border border-brand-blue/20" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2232/2232688.png'">
+                    <div>
+                        <span class="block font-bold text-lg text-brand-darkblue leading-tight">PERPUSTAKAAN CAHAYA ILMU</span>
+                        <span class="block text-xs font-medium text-slate-500">SDN Pulau Nyiur 2 • Kab. Banjar</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#profil" class="text-slate-700 hover:text-brand-blue transition-colors">Profil</a>
+                    <a href="#opac" class="text-slate-700 hover:text-brand-blue transition-colors">OPAC (Katalog)</a>
+                    <a href="#layanan" class="text-slate-700 hover:text-brand-blue transition-colors">Layanan & Konsultasi</a>
+                    <a href="#database" class="text-slate-700 hover:text-brand-blue transition-colors">E-Database</a>
+                    <a href="#kontak" class="text-slate-700 hover:text-brand-blue transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-slate-600 focus:outline-none p-2" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-3 text-sm font-medium">
+            <a href="#profil" class="block py-2 text-slate-700 hover:text-brand-blue border-b border-slate-100">Profil Perpustakaan</a>
+            <a href="#opac" class="block py-2 text-slate-700 hover:text-brand-blue border-b border-slate-100">OPAC (Layanan Penelusuran)</a>
+            <a href="#layanan" class="block py-2 text-slate-700 hover:text-brand-blue border-b border-slate-100">Informasi Layanan & Konsultasi</a>
+            <a href="#database" class="block py-2 text-slate-700 hover:text-brand-blue border-b border-slate-100">Database Online / E-Book</a>
+            <a href="#kontak" class="block py-2 text-slate-700 hover:text-brand-blue">Kontak & Media Sosial</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-brand-darkblue via-brand-blue to-blue-600 text-white py-16 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-400/20 via-transparent to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 backdrop-blur-md text-blue-100 border border-white/20">
+                        <i class="fa-solid fa-graduation-cap text-brand-gold"></i> Perpustakaan Sekolah Penggerak
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Selamat Datang di <br><span class="text-brand-gold">Perpustakaan Cahaya Ilmu</span>
+                    </h1>
+                    <p class="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        "Sebagai jantung pendidikan, pusat rujukan, dan pusat informasi ilmiah" — Layanan literasi terpadu SDN Pulau Nyiur 2.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#opac" class="px-6 py-3 bg-brand-gold hover:bg-yellow-500 text-slate-900 font-semibold rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i> Cari Buku di OPAC
+                        </a>
+                        <a href="#layanan" class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-xl border border-white/30 backdrop-blur-md transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-user-graduate"></i> Pojok Konsultasi Belajar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats Card Grid -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center">
+                        <i class="fa-solid fa-book-bookmark text-2xl text-brand-gold mb-2"></i>
+                        <div class="text-2xl sm:text-3xl font-extrabold">1.037</div>
+                        <div class="text-xs text-blue-100">Total Judul Buku</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center">
+                        <i class="fa-solid fa-layer-group text-2xl text-brand-gold mb-2"></i>
+                        <div class="text-2xl sm:text-3xl font-extrabold">2.985</div>
+                        <div class="text-xs text-blue-100">Total Eksemplar</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center">
+                        <i class="fa-solid fa-laptop-code text-2xl text-brand-gold mb-2"></i>
+                        <div class="text-2xl sm:text-3xl font-extrabold">514</div>
+                        <div class="text-xs text-blue-100">Terdata INLISLite</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center">
+                        <i class="fa-solid fa-file-excel text-2xl text-brand-gold mb-2"></i>
+                        <div class="text-2xl sm:text-3xl font-extrabold">523</div>
+                        <div class="text-xs text-blue-100">Proses Impor (Excel)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Profil Perpustakaan Section -->
+    <section id="profil" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-blue font-semibold text-xs uppercase tracking-wider">Identitas Perpustakaan</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Profil Perpustakaan Cahaya Ilmu</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Visi & Misi Card -->
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-compass text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Visi Perpustakaan</h3>
+                    </div>
+                    <p class="text-slate-700 italic border-l-4 border-brand-gold pl-4 py-2 bg-amber-50/50 rounded-r-lg mb-6">
+                        "Sebagai jantung pendidikan, pusat rujukan, dan pusat informasi ilmiah."
+                    </p>
+                    <h4 class="font-semibold text-slate-900 mb-2">Misi Utama:</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Menyediakan koleksi pustaka pendukung Kurikulum 2013 dan Kurikulum Merdeka.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Mengembangkan minat baca melalui literasi cerita lokal (Bahasa Banjar & Indonesia).</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Memfasilitasi layanan bimbingan konsultasi belajar bagi seluruh peserta didik.</li>
+                    </ul>
+                </div>
+
+                <!-- Informasi Sekolah & Alamat -->
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-school text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Lokasi & Instansi</h3>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-600">
+                            <p class="flex items-start gap-3">
+                                <i class="fa-solid fa-location-dot text-brand-blue mt-1"></i>
+                                <span><strong>Alamat:</strong> Jalan Batu Tiris RT.003 Desa Pulau Nyiur, Kecamatan Karang Intan, Kabupaten Banjar, Kalimantan Selatan.</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fa-solid fa-building-columns text-brand-blue"></i>
+                                <span><strong>Naungan:</strong> SDN Pulau Nyiur 2</span>
+                            </p>
+                            <p class="flex items-center gap-3">
+                                <i class="fa-solid fa-clock text-brand-blue"></i>
+                                <span><strong>Status Otomasi:</strong> INLISLite Perpustakaan RI</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 text-xs text-slate-500">
+                        Terintegrasi dengan sistem perpustakaan nasional dan kearsipan daerah.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tenaga Pengelola Perpustakaan (4 Orang) -->
+            <div class="mt-12">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 text-center">Struktur Tenaga Perpustakaan</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Kepala -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 rounded-full bg-blue-50 text-brand-blue mx-auto flex items-center justify-center font-bold text-xl mb-3 border border-blue-100">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base">Qomariah, S.Pd</h4>
+                        <p class="text-xs text-brand-blue font-medium mt-1">Kepala Perpustakaan</p>
+                    </div>
+
+                    <!-- Layanan Teknis -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 rounded-full bg-blue-50 text-brand-blue mx-auto flex items-center justify-center font-bold text-xl mb-3 border border-blue-100">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base">Marliani, S.Pd</h4>
+                        <p class="text-xs text-brand-blue font-medium mt-1">Koordinator / Layanan Teknis</p>
+                    </div>
+
+                    <!-- Petugas Layanan -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 rounded-full bg-blue-50 text-brand-blue mx-auto flex items-center justify-center font-bold text-xl mb-3 border border-blue-100">
+                            <i class="fa-solid fa-hand-holding-hand"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base">Bibit Sri Lestari, S.Pd</h4>
+                        <p class="text-xs text-brand-blue font-medium mt-1">Petugas Layanan Perpustakaan</p>
+                    </div>
+
+                    <!-- Petugas TIK -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-16 h-16 rounded-full bg-blue-50 text-brand-blue mx-auto flex items-center justify-center font-bold text-xl mb-3 border border-blue-100">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base">Najhan Noor, S.Kom</h4>
+                        <p class="text-xs text-brand-blue font-medium mt-1">Petugas TIK</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. OPAC Section -->
+    <section id="opac" class="py-16 bg-slate-100/70 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="text-brand-blue font-semibold text-xs uppercase tracking-wider">Layanan Penelusuran Katalog</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">OPAC (Online Public Access Catalog)</h2>
+                <p class="text-sm text-slate-600 mt-2">Cari ketersediaan dari 1.037 judul koleksi buku sekolah secara cepat.</p>
+            </div>
+
+            <!-- OPAC Search & Filter Bar -->
+            <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200 mb-8 max-w-4xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
+                        <input type="text" id="search-input" placeholder="Ketik judul buku, pengarang, atau subjek..." class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-blue text-sm">
+                    </div>
+                    <select id="category-filter" class="py-3 px-4 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white text-slate-700">
+                        <option value="ALL">Semua Kategori</option>
+                        <option value="K13">Kurikulum 2013</option>
+                        <option value="KM">Kurikulum Merdeka</option>
+                        <option value="BANJAR">Cerita Bahasa Banjar</option>
+                        <option value="INDO">Cerita Bahasa Indonesia</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Book Cards Grid -->
+            <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Book Item 1 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow" data-category="BANJAR">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-amber-100 text-amber-800">Cerita Bahasa Banjar</span>
+                            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">3 Eks Tersedia</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base leading-snug mb-1">Kisah Si Palui wan Kawannya</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-regular fa-user mr-1"></i> H. Abdul Djebar Hapip</p>
+                        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-3 rounded-xl">
+                            <div><strong>Kode:</strong> PN2-461</div>
+                            <div><strong>Penerbit:</strong> Dinperpusip Kalsel</div>
+                            <div><strong>Sumber:</strong> Bantuan Perpusnas</div>
+                        </div>
+                    </div>
+                    <button onclick="openBorrowModal('Kisah Si Palui wan Kawannya', 'PN2-461')" class="mt-4 w-full py-2 bg-brand-blue hover:bg-blue-700 text-white rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bookmark"></i> Pinjam / Pesan Buku
+                    </button>
+                </div>
+
+                <!-- Book Item 2 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow" data-category="KM">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-blue-100 text-blue-800">Kurikulum Merdeka</span>
+                            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">2 Eks Tersedia</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base leading-snug mb-1">Buku Teks Utama IPAS Kelas 4</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-regular fa-user mr-1"></i> BSKAP Kemendikbudristek</p>
+                        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-3 rounded-xl">
+                            <div><strong>Kode:</strong> PN2-205</div>
+                            <div><strong>Penerbit:</strong> Kemendikbudristek</div>
+                            <div><strong>Sumber:</strong> Dana BOS</div>
+                        </div>
+                    </div>
+                    <button onclick="openBorrowModal('Buku Teks Utama IPAS Kelas 4', 'PN2-205')" class="mt-4 w-full py-2 bg-brand-blue hover:bg-blue-700 text-white rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bookmark"></i> Pinjam / Pesan Buku
+                    </button>
+                </div>
+
+                <!-- Book Item 3 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow" data-category="INDO">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800">Cerita Bahasa Indonesia</span>
+                            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">2 Eks Tersedia</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base leading-snug mb-1">Kisah 25 Nabi & Rasul untuk Anak</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-regular fa-user mr-1"></i> KH. Ahmad Sanusi</p>
+                        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-3 rounded-xl">
+                            <div><strong>Kode:</strong> PN2-380</div>
+                            <div><strong>Penerbit:</strong> Gema Insani</div>
+                            <div><strong>Sumber:</strong> Bantuan Perpusnas</div>
+                        </div>
+                    </div>
+                    <button onclick="openBorrowModal('Kisah 25 Nabi & Rasul untuk Anak', 'PN2-380')" class="mt-4 w-full py-2 bg-brand-blue hover:bg-blue-700 text-white rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bookmark"></i> Pinjam / Pesan Buku
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Informasi Layanan & Pojok Konsultasi Section -->
+    <section id="layanan" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-blue font-semibold text-xs uppercase tracking-wider">Fasilitas Khusus</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Layanan & Jam Operasional</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Highlight Pojok Layanan Konsultasi -->
+                <div class="lg:col-span-7 bg-gradient-to-br from-blue-50 via-white to-slate-50 border border-blue-200/80 p-6 sm:p-8 rounded-3xl shadow-sm">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue text-white text-xs font-semibold mb-4">
+                        <i class="fa-solid fa-star text-brand-gold"></i> Layanan Unggulan
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Pojok Layanan Konsultasi Belajar</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Menyediakan ruang khusus di sudut perpustakaan yang dilengkapi meja dan kursi bimbingan bagi anak/siswa yang ingin belajar lebih atau mengalami kesulitan belajar.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <i class="fa-solid fa-hands-holding-child text-brand-blue text-lg mb-2"></i>
+                            <h4 class="font-bold text-slate-800 text-sm">Pendampingan Belajar</h4>
+                            <p class="text-xs text-slate-500 mt-1">Bimbingan tugas sekolah & pemahaman materi pelajaran.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <i class="fa-solid fa-book-open text-brand-blue text-lg mb-2"></i>
+                            <h4 class="font-bold text-slate-800 text-sm">Bimbingan Membaca</h4>
+                            <p class="text-xs text-slate-500 mt-1">Latihan membaca lancar & pemahaman cerita lokal.</p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/62895393586349?text=Halo%20Petugas%20Perpustakaan%20Cahaya%20Ilmu,%20saya%20ingin%20mendaftar%20Layanan%20Konsultasi%20Belajar" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-semibold transition-colors">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Booking Jadwal Konsultasi (WA)
+                    </a>
+                </div>
+
+                <!-- Jam Operasional Card -->
+                <div class="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-8 rounded-3xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-brand-gold">
+                        <i class="fa-regular fa-clock"></i> Jam Operasional
+                    </h3>
+                    <div class="space-y-4 text-sm divide-y divide-slate-800">
+                        <div class="pt-2 flex justify-between items-center">
+                            <span class="text-slate-300">Senin – Kamis</span>
+                            <span class="font-bold text-white bg-slate-800 px-3 py-1 rounded-lg">08.00 – 14.30 WITA</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-center">
+                            <span class="text-slate-300">Jumat</span>
+                            <span class="font-bold text-white bg-slate-800 px-3 py-1 rounded-lg">08.00 – 11.00 WITA</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-center">
+                            <span class="text-slate-300">Sabtu</span>
+                            <span class="font-bold text-white bg-slate-800 px-3 py-1 rounded-lg">08.00 – 12.00 WITA</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-center text-xs text-amber-400">
+                            <span>Minggu & Hari Libur Nasional</span>
+                            <span>Tutup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Link ke Database Online & E-Book Section -->
+    <section id="database" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brand-blue font-semibold text-xs uppercase tracking-wider">Literasi Digital</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Database Online & E-Book</h2>
+                <p class="text-sm text-slate-600 mt-2">Akses koleksi buku digital resmi sekolah dan portal pustaka nasional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Google Drive E-Book Resmi -->
+                <a href="https://drive.google.com/drive/u/0/folders/1xcijiLX7ZYA29mL5OWx0Mk2B0KVYhY7i" target="_blank" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <i class="fa-brands fa-google-drive"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">E-Book Cahaya Ilmu</h4>
+                    <p class="text-xs text-slate-500 mb-4">Folder koleksi buku digital resmi SDN Pulau Nyiur 2.</p>
+                    <span class="text-xs font-semibold text-brand-blue group-hover:underline flex items-center gap-1">Akses Google Drive <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- E-Pusnas -->
+                <a href="https://e-pusnas.perpusnas.go.id/" target="_blank" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-book-atlas"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">e-Pusnas</h4>
+                    <p class="text-xs text-slate-500 mb-4">Perpustakaan Digital Perpustakaan Nasional RI.</p>
+                    <span class="text-xs font-semibold text-emerald-600 group-hover:underline flex items-center gap-1">Buka Portal <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- SIBI Kemendikbud -->
+                <a href="https://buku.kemdikbud.go.id/" target="_blank" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-school-flag"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">SIBI Kemendikbud</h4>
+                    <p class="text-xs text-slate-500 mb-4">Sistem Informasi Perbukuan Indonesia (Buku Kurikulum).</p>
+                    <span class="text-xs font-semibold text-amber-600 group-hover:underline flex items-center gap-1">Buka Portal <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- iKalsel -->
+                <a href="https://ikalsel.moco.co.id/" target="_blank" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">iKalsel Digital</h4>
+                    <p class="text-xs text-slate-500 mb-4">Perpustakaan Digital Provinsi Kalimantan Selatan.</p>
+                    <span class="text-xs font-semibold text-purple-600 group-hover:underline flex items-center gap-1">Buka Portal <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 & 6. Kontak & Media Sosial Section -->
+    <section id="kontak" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-brand-blue font-semibold text-xs uppercase tracking-wider">Hubungi Kami</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Kontak & Media Sosial Resmi</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Silakan hubungi kami untuk informasi keanggotaan, usulan buku, atau layanan konsultasi belajar.
+                    </p>
+
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500">WhatsApp Resmi</div>
+                                <a href="https://wa.me/62895393586349" target="_blank" class="font-bold text-slate-800 hover:text-emerald-600">0895-3935-86349</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                            <div class="w-10 h-10 rounded-lg bg-red-500 text-white flex items-center justify-center font-bold text-lg">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500">Email Sekolah</div>
+                                <a href="mailto:sdnpny2@gmail.com" class="font-bold text-slate-800 hover:text-red-600">sdnpny2@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="pt-4">
+                        <h4 class="font-bold text-slate-900 text-sm mb-3">Ikuti Media Sosial Kami:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://instagram.com/sdnpulaunyiur2" target="_blank" class="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl text-xs font-semibold flex items-center gap-2 hover:opacity-90">
+                                <i class="fa-brands fa-instagram text-sm"></i> @sdnpulaunyiur2
+                            </a>
+                            <a href="https://tiktok.com/@sdn.pulau.nyiur.2" target="_blank" class="px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold flex items-center gap-2 hover:bg-slate-800">
+                                <i class="fa-brands fa-tiktok text-sm"></i> @sdn.pulau.nyiur.2
+                            </a>
+                            <a href="https://facebook.com/SdnpulaunyiurII" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded-xl text-xs font-semibold flex items-center gap-2 hover:bg-blue-700">
+                                <i class="fa-brands fa-facebook text-sm"></i> Sdnpulaunyiur II
+                            </a>
+                            <a href="https://youtube.com/@sdnpulaunyiur2" target="_blank" class="px-4 py-2 bg-red-600 text-white rounded-xl text-xs font-semibold flex items-center gap-2 hover:bg-red-700">
+                                <i class="fa-brands fa-youtube text-sm"></i> sdnpulaunyiur2
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple Interactive Contact Form -->
+                <div class="lg:col-span-6 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4">Kirim Pesan Ke Perpustakaan</h3>
+                    <form onsubmit="event.preventDefault(); alert('Pesan Anda telah terkirim ke petugas perpustakaan!');" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap</label>
+                            <input type="text" required placeholder="Masukkan nama..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Status</label>
+                            <select class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white">
+                                <option>Siswa / Santri</option>
+                                <option>Guru / Tenaga Pendidik</option>
+                                <option>Orang Tua Murid</option>
+                                <option>Masyarakat Umum</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Pesan / Pertanyaan</label>
+                            <textarea rows="3" required placeholder="Tuliskan pesan..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-brand-blue hover:bg-blue-700 text-white font-semibold rounded-xl text-sm transition-colors shadow-sm">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-darkblue text-white py-8 border-t border-blue-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-blue-200 space-y-2">
+            <p>© 2026 Perpustakaan Cahaya Ilmu - SDN Pulau Nyiur 2. All rights reserved.</p>
+            <p class="text-slate-400">Jalan Batu Tiris RT.003 Desa Pulau Nyiur, Kec. Karang Intan, Kab. Banjar, Kalimantan Selatan.</p>
+        </div>
+    </footer>
+
+    <!-- Borrow Modal Script -->
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Search & Filter OPAC Logic
+        const searchInput = document.getElementById('search-input');
+        const categoryFilter = document.getElementById('category-filter');
+        const bookCards = document.querySelectorAll('#books-grid > div');
+
+        function filterBooks() {
+            const query = searchInput.value.toLowerCase();
+            const cat = categoryFilter.value;
+
+            bookCards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                const cardCat = card.getAttribute('data-category');
+
+                const matchesQuery = text.includes(query);
+                const matchesCat = (cat === 'ALL' || cardCat === cat);
+
+                if (matchesQuery && matchesCat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterBooks);
+        categoryFilter.addEventListener('change', filterBooks);
+
+        // Simple Reservation Handler
+        function openBorrowModal(title, code) {
+            const name = prompt(`Reservasi Buku:\n"${title}" (${code})\n\nMasukkan Nama Lengkap Anda:`);
+            if (name) {
+                alert(`Terima kasih ${name}! Permohonan peminjaman buku "${title}" berhasil dikirim. Silakan ambil buku di meja layanan perpustakaan dengan menunjukkan nama Anda.`);
+            }
+        }
+    </script>
+</body>
+</html>
